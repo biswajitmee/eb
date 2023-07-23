@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Camera Fly-through using Theatre.js | Codrops</title>
+    <meta name="description" content="Demo for the tutorial on how to create a camera fly-through effect with Theatre.js" />
+    <meta name="keywords" content="theatre.js, fly-through, 3d, react three fiber" />
+    <meta name="author" content="Biswajit Halder portfolio" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/components.css" />
+    <link rel="stylesheet" type="text/css" href="css/blur.scss" />
+    
+
+
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+  </head>
+  <body class="demo-1">
+    <main>    
+      <div id="root">       
+      </div>
+   
+    </main>
+    <div style="overflow-x: hidden;">
+      <canvas style="width:100vw; height: 90vh; background-color:black;"></canvas>
+    </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+<script src="https://unpkg.com/webgl-fluid@0.0.4/dist/webgl-fluid.umd.min.js"></script>  
+<script type="module" src="/src/main.jsx"></script>
+<script src="fluid.js" ></script>
+
+
+  </body>
+</html>
