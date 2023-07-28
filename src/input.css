@@ -3,10 +3,13 @@
 @tailwind utilities;
  
 
-
 @layer components {
   .txt-gradient {
     @apply bg-clip-text bg-gradient-to-r from-purple-700 to-blue-600 text-transparent ;
+  }
+
+  .txt-gradient2 {
+    @apply bg-clip-text bg-gradient-to-r  from-[#8500FF] from-10% via-[#2B5EE9] via-20% to-blue-900 to-60%  text-transparent ;
   }
 
   .txt-white {
@@ -16,13 +19,13 @@
   .bg-gradiant {
     @apply bg-gradient-to-r from-blue-900/[.80] via-violet-900/[.90] to-emerald-900/[.50];
   }
+
   .backgroundPosition{ 
     @apply bg-center ;
   }
 
 .card{
   @apply  text-xl  bg-violet-950 rounded-[25px];
-
 }
 
 .gradiantBG{
@@ -33,5 +36,79 @@
   @apply  bg-gradient-to-r from-violet-950/[.20] via-violet-950/[0.10] to-violet-950/[.0] ; 
 }
 
+.nav-bg-trns{
+  @apply bg-transparent bg-gradient-to-t from-[#00046A] via-violet-900/[.50] to-violet-900/[.20] ; 
 
 }
+
+.we-offer{
+  @apply ring-4 ring-black rounded-[20px];
+}
+
+.line-gradint{
+  @apply border-b-[1px] border-gradient;
+}
+
+
+}
+
+
+
+
+@layer utilities{
+
+  .border-gradient {
+    border-image-slice:1;
+    border-width: 1px; 
+    border-style: solid;
+    border-radius: 50em;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-image-source: linear-gradient(to left, #000000, #7A24CE, #000000);
+     }
+  .border-gradient-purple {   
+    border-image-source: linear-gradient(to top, #305AE7, #0500FF, #7A24CE );
+    border-radius: 50em;
+  }
+  .border-gradient-green {
+    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+  }
+
+ 
+  .border-gradient-2 {
+    background: linear-gradient(#000, #000) padding-box,
+                linear-gradient(to right, darkblue, darkorchid) border-box;
+    border-radius:5px;
+    border: 1px solid transparent;
+  }
+  
+  .border-gradient-3 {   
+    box-sizing: border-box;
+    background: rgba(20,23,45,0.05);
+    border-radius:10px;
+    border-image-slice:2;  
+    border-image-width:2px; 
+    border-image-source:url('/nav-border.png');
+ 
+  }
+
+  /* .line-gradint {
+    box-sizing: content-box;
+    background: rgba(0,0,0,0.01);  
+    border-image-slice:1;  
+    border-style: solid;
+    border-image-width:1px;
+    border-image-source: bg-gradient-to-bl(to top, #305AE7, #0500FF, #7A24CE );
+    border-image-repeat:no-repeat;
+
+  } */
+  .blk-bg-trans{
+
+    background: rgba(0, 0, 0, 0.99);
+
+  }
+
+}
+
+ 
