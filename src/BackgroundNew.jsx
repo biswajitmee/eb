@@ -20,7 +20,7 @@ function BackgroundNew(props) {
     animationAction.play();
 
     const animate = () => {
-      mixer.update(0.030); // Adjust the animation speed here
+      mixer.update(0.020); // Adjust the animation speed here
       requestAnimationFrame(animate);
     };
 

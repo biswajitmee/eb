@@ -43,13 +43,17 @@ export default function ScrollSection() {
         {/* <LineOrbit position={[2.5, 20, -16]} />
         <Globe position={[2.5, 20, -16]}/> */}
         {/* <BaseCloud position={[20, 0, 16]} /> */}
+
+        <Fusion  position={[0, 0, -30]} />
         <BackgroundNew position={[50, 0, -30]} />
-          {/* <Fusion  position={[0, 0, 0]} /> */}
+        
+        
+
           {/* <HolaSpesh position={[-100, 0, 16]} /> */}
 
 
 
-        <ScrollControls pages={5} distance={0.5} damping={0.4}>
+        <ScrollControls pages={5} distance={1.5} damping={0.4}>
           <SheetProvider sheet={sheet}>
             <Scene />
           </SheetProvider>
@@ -150,134 +154,8 @@ export default function ScrollSection() {
               <div>
                 <section class="text-gray-600 body-font">
                   <div class="container px-5 py-2 mx-auto">
-                    <div class="flex flex-wrap -m-4 overflow-y-scroll ">
-                      <div class="p-4 lg:w-1/3 ">
-                        <div className="card relative ">
-                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
-                            <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
-                              <h1 class=" text-gray-100 pt-9 pl-5">
-                                Designer & Frontend Developer
-                              </h1>
-                              <h1 class=" text-gray-100 pl-5 tracking-[.35em]">
-                                Biswajit Halder
-                              </h1>
-                            </div>
-                          </div>
-                          <div class="flex flex-row text-4xl p-3 text-center">
-                            <div className="p-2 w-16">
-                              <img src="fb.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="dribble.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="skype.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="github.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="pinterest.svg" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="p-4 lg:w-1/3 ">
-                        <div className="card relative ">
-                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
-                            <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
-                              <h1 class=" text-gray-100 pt-9 pl-5">
-                                Designer & Frontend Developer
-                              </h1>
-                              <h1 class=" text-gray-100 pl-5 tracking-[.35em]">
-                                Biswajit Halder
-                              </h1>
-                            </div>
-                          </div>
-                          <div class="flex flex-row text-4xl p-3 text-center">
-                            <div className="p-2 w-16">
-                              <img src="fb.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="dribble.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="skype.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="github.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="pinterest.svg" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="p-4 lg:w-1/3 ">
-                        <div className="card relative ">
-                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
-                            <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
-                              <h1 class=" text-gray-100 pt-9 pl-5">
-                                Designer & Frontend Developer
-                              </h1>
-                              <h1 class=" text-gray-100 pl-5 tracking-[.35em]">
-                                Biswajit Halder
-                              </h1>
-                            </div>
-                          </div>
-                          <div class="flex flex-row text-4xl p-3 text-center">
-                            <div className="p-2 w-16">
-                              <img src="fb.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="dribble.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="skype.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="github.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="pinterest.svg" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="p-4 lg:w-1/3 ">
-                        <div className="card relative ">
-                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
-                            <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
-                              <h1 class=" text-gray-100 pt-9 pl-5">
-                                Designer & Frontend Developer
-                              </h1>
-                              <h1 class=" text-gray-100 pl-5 tracking-[.35em]">
-                                Biswajit Halder
-                              </h1>
-                            </div>
-                          </div>
-                          <div class="flex flex-row text-4xl p-3 text-center">
-                            <div className="p-2 w-16">
-                              <img src="fb.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="dribble.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="skype.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="github.svg" />
-                            </div>
-                            <div className="p-2 w-16">
-                              <img src="pinterest.svg" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="flex flex-wrap -m-4">
+                      
 
                       <div class="p-4 lg:w-1/3 ">
                         <div className="card relative ">

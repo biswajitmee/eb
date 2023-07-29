@@ -2,13 +2,12 @@ import React, { useRef,useEffect } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { AnimationMixer, LoopRepeat } from "three";
 
-
-
- function Fusion(props) {
+function Cycle(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/fusion.glb");
+  const { nodes, materials, animations } = useGLTF("/cycle.glb");
   const { actions } = useAnimations(animations, group);
- 
+
+
   useEffect(() => {
      const mixer = new AnimationMixer(group.current);
      // Find the animation action by name or index
@@ -18,21 +17,8 @@ import { AnimationMixer, LoopRepeat } from "three";
      // Play the animation
      animationAction.play();
  
-     // Add rotation animation to the wheel parts (spokes)
-     const rotateWheel = () => {
-       const wheelParts = ["Torus_0", "Torus001_2", "Torus002_4", "Torus003_6"]; // Add the names of your wheel parts here
-       const rotationSpeed = 0.05; // Adjust the rotation speed here
- 
-       wheelParts.forEach((partName) => {
-         if (group.current.getObjectByName(partName)) {
-           group.current.getObjectByName(partName).rotation.z += rotationSpeed;
-         }
-       });
-     };
- 
      const animate = () => {
-       mixer.update(0.010); // Adjust the animation speed here
-       rotateWheel(); // Call the wheel rotation function
+       mixer.update(0.015); // Adjust the animation speed here
        requestAnimationFrame(animate);
      };
  
@@ -42,20 +28,19 @@ import { AnimationMixer, LoopRepeat } from "three";
        mixer.stopAllAction();
      };
    }, [animations]);
- 
 
-   
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
         <group
           name="Sketchfab_model"
           rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.539}
+          scale={0.585}
         >
           <group name="root">
             <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
-              <group name="Torus_0" position={[-1.249, 0, 0]}>
+              <group name="Torus_0" position={[-1, 0, 0]}>
                 <mesh
                   name="Object_4"
                   castShadow
@@ -64,7 +49,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus001_2" position={[1.249, 0, 0]}>
+              <group name="Torus001_2" position={[1, 0, 0]}>
                 <mesh
                   name="Object_6"
                   castShadow
@@ -73,7 +58,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus002_4" position={[0, 1.249, 0]}>
+              <group name="Torus002_4" position={[0, 1, 0]}>
                 <mesh
                   name="Object_8"
                   castShadow
@@ -82,7 +67,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus003_6" position={[0, -1.249, 0]}>
+              <group name="Torus003_6" position={[0, -1, 0]}>
                 <mesh
                   name="Object_10"
                   castShadow
@@ -91,7 +76,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus004_8" position={[-0.883, 0.883, 0]}>
+              <group name="Torus004_8" position={[-0.707, 0.707, 0]}>
                 <mesh
                   name="Object_12"
                   castShadow
@@ -100,7 +85,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus005_10" position={[0.883, -0.883, 0]}>
+              <group name="Torus005_10" position={[0.707, -0.707, 0]}>
                 <mesh
                   name="Object_14"
                   castShadow
@@ -109,7 +94,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus006_12" position={[0.883, 0.883, 0]}>
+              <group name="Torus006_12" position={[0.707, 0.707, 0]}>
                 <mesh
                   name="Object_16"
                   castShadow
@@ -118,7 +103,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus007_14" position={[-0.883, -0.883, 0]}>
+              <group name="Torus007_14" position={[-0.707, -0.707, 0]}>
                 <mesh
                   name="Object_18"
                   castShadow
@@ -127,7 +112,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus008_16" position={[-1.154, 0.478, 0]}>
+              <group name="Torus008_16" position={[-0.924, 0.383, 0]}>
                 <mesh
                   name="Object_20"
                   castShadow
@@ -136,7 +121,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus009_18" position={[1.154, -0.478, 0]}>
+              <group name="Torus009_18" position={[0.924, -0.383, 0]}>
                 <mesh
                   name="Object_22"
                   castShadow
@@ -145,7 +130,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus010_20" position={[0.478, 1.154, 0]}>
+              <group name="Torus010_20" position={[0.383, 0.924, 0]}>
                 <mesh
                   name="Object_24"
                   castShadow
@@ -154,7 +139,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus011_22" position={[-0.478, -1.154, 0]}>
+              <group name="Torus011_22" position={[-0.383, -0.924, 0]}>
                 <mesh
                   name="Object_26"
                   castShadow
@@ -163,7 +148,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus012_24" position={[-0.478, 1.154, 0]}>
+              <group name="Torus012_24" position={[-0.383, 0.924, 0]}>
                 <mesh
                   name="Object_28"
                   castShadow
@@ -172,7 +157,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus013_26" position={[0.478, -1.154, 0]}>
+              <group name="Torus013_26" position={[0.383, -0.924, 0]}>
                 <mesh
                   name="Object_30"
                   castShadow
@@ -181,7 +166,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus014_28" position={[1.154, 0.478, 0]}>
+              <group name="Torus014_28" position={[0.924, 0.383, 0]}>
                 <mesh
                   name="Object_32"
                   castShadow
@@ -190,7 +175,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus015_30" position={[-1.154, -0.478, 0]}>
+              <group name="Torus015_30" position={[-0.924, -0.383, 0]}>
                 <mesh
                   name="Object_34"
                   castShadow
@@ -199,7 +184,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus016_32" position={[-1.225, 0.244, 0]}>
+              <group name="Torus016_32" position={[-0.981, 0.195, 0]}>
                 <mesh
                   name="Object_36"
                   castShadow
@@ -208,7 +193,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus017_34" position={[1.225, -0.244, 0]}>
+              <group name="Torus017_34" position={[0.981, -0.195, 0]}>
                 <mesh
                   name="Object_38"
                   castShadow
@@ -217,7 +202,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus018_36" position={[0.244, 1.225, 0]}>
+              <group name="Torus018_36" position={[0.195, 0.981, 0]}>
                 <mesh
                   name="Object_40"
                   castShadow
@@ -226,7 +211,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus019_38" position={[-0.244, -1.225, 0]}>
+              <group name="Torus019_38" position={[-0.195, -0.981, 0]}>
                 <mesh
                   name="Object_42"
                   castShadow
@@ -235,7 +220,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus020_40" position={[-0.694, 1.039, 0]}>
+              <group name="Torus020_40" position={[-0.556, 0.831, 0]}>
                 <mesh
                   name="Object_44"
                   castShadow
@@ -244,7 +229,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus021_42" position={[0.694, -1.039, 0]}>
+              <group name="Torus021_42" position={[0.556, -0.831, 0]}>
                 <mesh
                   name="Object_46"
                   castShadow
@@ -253,7 +238,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus022_44" position={[1.039, 0.694, 0]}>
+              <group name="Torus022_44" position={[0.831, 0.556, 0]}>
                 <mesh
                   name="Object_48"
                   castShadow
@@ -262,7 +247,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus023_46" position={[-1.039, -0.694, 0]}>
+              <group name="Torus023_46" position={[-0.831, -0.556, 0]}>
                 <mesh
                   name="Object_50"
                   castShadow
@@ -271,7 +256,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus024_48" position={[-1.039, 0.694, 0]}>
+              <group name="Torus024_48" position={[-0.831, 0.556, 0]}>
                 <mesh
                   name="Object_52"
                   castShadow
@@ -280,7 +265,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus025_50" position={[1.039, -0.694, 0]}>
+              <group name="Torus025_50" position={[0.831, -0.556, 0]}>
                 <mesh
                   name="Object_54"
                   castShadow
@@ -289,7 +274,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus026_52" position={[0.694, 1.039, 0]}>
+              <group name="Torus026_52" position={[0.556, 0.831, 0]}>
                 <mesh
                   name="Object_56"
                   castShadow
@@ -298,7 +283,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus027_54" position={[-0.694, -1.039, 0]}>
+              <group name="Torus027_54" position={[-0.556, -0.831, 0]}>
                 <mesh
                   name="Object_58"
                   castShadow
@@ -307,7 +292,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus028_56" position={[-0.244, 1.225, 0]}>
+              <group name="Torus028_56" position={[-0.195, 0.981, 0]}>
                 <mesh
                   name="Object_60"
                   castShadow
@@ -316,7 +301,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus029_58" position={[0.244, -1.225, 0]}>
+              <group name="Torus029_58" position={[0.195, -0.981, 0]}>
                 <mesh
                   name="Object_62"
                   castShadow
@@ -325,7 +310,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus030_60" position={[1.225, 0.244, 0]}>
+              <group name="Torus030_60" position={[0.981, 0.195, 0]}>
                 <mesh
                   name="Object_64"
                   castShadow
@@ -334,7 +319,7 @@ import { AnimationMixer, LoopRepeat } from "three";
                   material={materials.material}
                 />
               </group>
-              <group name="Torus031_62" position={[-1.225, -0.244, 0]}>
+              <group name="Torus031_62" position={[-0.981, -0.195, 0]}>
                 <mesh
                   name="Object_66"
                   castShadow
@@ -351,6 +336,6 @@ import { AnimationMixer, LoopRepeat } from "three";
   );
 }
 
-useGLTF.preload("/fusion.glb");
+useGLTF.preload("/cycle.glb");
 
-export default Fusion;
+export default Cycle;
