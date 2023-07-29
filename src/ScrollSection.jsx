@@ -26,6 +26,8 @@ import BackgroundNew from "./BackgroundNew";
 import Globe from "./Globe";
 import BaseCloud from "./BaseCloud";
 import HeroText from "./HeroText";
+import HolaSpesh from "./HolaSpesh";
+import Fusion from "./Fusion";
 
 // studio.initialize();
 // studio.extend(extension);
@@ -38,10 +40,15 @@ export default function ScrollSection() {
         style={{ width: "100vw", height: "100vh" }}
         gl={{ preserveDrawingBuffer: true }}
       >
-        {/* <LineOrbit position={[2.5, 20, -16]} /> */}
-        {/* <Globe position={[2.5, 20, -16]}/> */}
-        <BaseCloud position={[20, 0, 16]} />
-        <BackgroundNew position={[-100, 0, 16]} />
+        {/* <LineOrbit position={[2.5, 20, -16]} />
+        <Globe position={[2.5, 20, -16]}/> */}
+        {/* <BaseCloud position={[20, 0, 16]} /> */}
+        <BackgroundNew position={[50, 0, -30]} />
+          {/* <Fusion  position={[0, 0, 0]} /> */}
+          {/* <HolaSpesh position={[-100, 0, 16]} /> */}
+
+
+
         <ScrollControls pages={5} distance={0.5} damping={0.4}>
           <SheetProvider sheet={sheet}>
             <Scene />
@@ -81,15 +88,21 @@ export default function ScrollSection() {
             {/* ---------------header big text and animation------------------ */}
 
             <header class=" gradiantBG2 border-x-violet-950 border-y-violet-950 min-h-[60vh] mb-5 rounded-3xl	md:container md:mx-auto lg:container lg:mx-auto ">
-              <div className=" flex flex-col-reverse  grid-cols-1 gap-4 lg:grid lg:grid-cols-12 md:grid md:grid-cols-12 md:gap-4">
-                <div className="lg:col-start-1 lg:col-span-6 pl-20 pt-20 items-center text-base justify-center">
-                 
-                 
-                 
-             <h1 className="text-2xl font-semibold txt-gradient leading-[85px]	">  <HeroText /></h1>
+           
 
-                  <div class="flex flex-row nav-bg-trns text-md font-semibold	 rounded text-violet-500 mt-4">
-                    <button class="p-3 rounded-full ">Save Changes</button>
+
+            <div class="grid grid-cols-3 gap-4">
+ 
+              <div class="col-span-2">        
+                <div className="lg:col-start-1 lg:col-span-6 pl-20 pt-20 items-center text-base justify-center">   
+
+
+                    <div className="h-[300px]">
+                    <h1 className="text-3xl font-semibold txt-gradient leading-[85px]	">  <HeroText /></h1>
+                    </div>   
+                  
+                    <div class="flex flex-row nav-bg-trns text-md font-semibold	 rounded text-violet-500 mt-4">
+                    <button class="p-3 ">Save Changes</button>
                     <div className="p-3">Research</div>
                     <div className="p-3">Designing</div>
                     <div className="p-3">Development</div>
@@ -101,11 +114,18 @@ export default function ScrollSection() {
                       />
                     </div>
                   </div>
+
+
+
                 </div>
-                {/* <div className="lg:col-start-7 lg:col-span-12">
-                <p className="text-xl text-slate-300 p-28">animation</p>
-              </div> */}
-              </div>
+                </div>
+              <div class="">05</div>
+            
+            </div>
+                     
+            
+       
+
             </header>
 
             {/* ---------------2 brother profile photo board------------------ */}
@@ -133,7 +153,7 @@ export default function ScrollSection() {
                     <div class="flex flex-wrap -m-4 overflow-y-scroll ">
                       <div class="p-4 lg:w-1/3 ">
                         <div className="card relative ">
-                          <div className="bg-[url('/who.jpeg')] backgroundPosition min-h-[550px] rounded-[25px]">
+                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
                             <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
                               <h1 class=" text-gray-100 pt-9 pl-5">
                                 Designer & Frontend Developer
@@ -165,7 +185,7 @@ export default function ScrollSection() {
 
                       <div class="p-4 lg:w-1/3 ">
                         <div className="card relative ">
-                          <div className="bg-[url('/who.jpeg')] backgroundPosition min-h-[550px] rounded-[25px]">
+                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
                             <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
                               <h1 class=" text-gray-100 pt-9 pl-5">
                                 Designer & Frontend Developer
@@ -197,7 +217,7 @@ export default function ScrollSection() {
 
                       <div class="p-4 lg:w-1/3 ">
                         <div className="card relative ">
-                          <div className="bg-[url('/who.jpeg')] backgroundPosition min-h-[550px] rounded-[25px]">
+                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
                             <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
                               <h1 class=" text-gray-100 pt-9 pl-5">
                                 Designer & Frontend Developer
@@ -229,7 +249,7 @@ export default function ScrollSection() {
 
                       <div class="p-4 lg:w-1/3 ">
                         <div className="card relative ">
-                          <div className="bg-[url('/who.jpeg')] backgroundPosition min-h-[550px] rounded-[25px]">
+                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
                             <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
                               <h1 class=" text-gray-100 pt-9 pl-5">
                                 Designer & Frontend Developer
@@ -261,7 +281,7 @@ export default function ScrollSection() {
 
                       <div class="p-4 lg:w-1/3 ">
                         <div className="card relative ">
-                          <div className="bg-[url('/who.jpeg')] backgroundPosition min-h-[550px] rounded-[25px]">
+                          <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
                             <div class=" gradiantBG min-h-[130px] absolute bottom-0 left-0 w-full mb-20 pl-12">
                               <h1 class=" text-gray-100 pt-9 pl-5">
                                 Designer & Frontend Developer
@@ -404,7 +424,7 @@ function Scene() {
         theatreKey="Camera"
         makeDefault
         near={5}
-        far={1000}
+        far={500}
         fov={15}
       />
     </>
