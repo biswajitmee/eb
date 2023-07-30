@@ -28,9 +28,19 @@ import BaseCloud from "./BaseCloud";
 import HeroText from "./HeroText";
 import HolaSpesh from "./HolaSpesh";
 import Fusion from "./Fusion";
+import TextInView from "./TextInView";
 
 // studio.initialize();
 // studio.extend(extension);
+
+
+
+
+
+
+
+
+
 
 export default function ScrollSection() {
   const sheet = getProject("myProject", { state: theatreState }).sheet("Scene");
@@ -44,14 +54,10 @@ export default function ScrollSection() {
         <Globe position={[2.5, 20, -16]}/> */}
         {/* <BaseCloud position={[20, 0, 16]} /> */}
 
-        <Fusion  position={[0, 0, -30]} />
+        <Fusion position={[0, 0, -30]} />
         <BackgroundNew position={[50, 0, -30]} />
-        
-        
 
-          {/* <HolaSpesh position={[-100, 0, 16]} /> */}
-
-
+        {/* <HolaSpesh position={[-100, 0, 16]} /> */}
 
         <ScrollControls pages={5} distance={1.5} damping={0.4}>
           <SheetProvider sheet={sheet}>
@@ -91,63 +97,65 @@ export default function ScrollSection() {
 
             {/* ---------------header big text and animation------------------ */}
 
-            <header class=" gradiantBG2 border-x-violet-950 border-y-violet-950 min-h-[60vh] mb-5 rounded-3xl	md:container md:mx-auto lg:container lg:mx-auto ">
-           
+            <header class=" gradiantBG2 border-x-violet-950 border-y-violet-950 min-h-[60vh] mt-[-115px] rounded-2xl	md:container md:mx-auto lg:container lg:mx-auto ">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="col-span-2">
+                  <div className="lg:col-start-1 lg:col-span-6 pl-20 pt-20 items-center text-base justify-center">
+                    <div className="h-[300px] pt-[50px]">
+                      <h1 className="text-5xl font-semibold txt-gradient leading-[95px]	">
+                        {" "}
+                        <HeroText />
+                      </h1>
+                    </div>
 
-
-            <div class="grid grid-cols-3 gap-4">
- 
-              <div class="col-span-2">        
-                <div className="lg:col-start-1 lg:col-span-6 pl-20 pt-20 items-center text-base justify-center">   
-
-
-                    <div className="h-[300px]">
-                    <h1 className="text-3xl font-semibold txt-gradient leading-[85px]	">  <HeroText /></h1>
-                    </div>   
-                  
                     <div class="flex flex-row nav-bg-trns text-md font-semibold	 rounded text-violet-500 mt-4">
-                    <button class="p-3 ">Save Changes</button>
-                    <div className="p-3">Research</div>
-                    <div className="p-3">Designing</div>
-                    <div className="p-3">Development</div>
-                    <div className="p-3">Deployment</div>
-                    <div className="p-3  ">
-                      <img
-                        className="absolute mt-[-85px] ml-[70px]"
-                        src="experience.png"
-                      />
+                      <button class="p-3 ">Save Changes</button>
+                      <div className="p-3">Research</div>
+                      <div className="p-3">Designing</div>
+                      <div className="p-3">Development</div>
+                      <div className="p-3">Deployment</div>
+                      <div className="p-3  ">
+                        <motion.img
+                         initial={{
+                          x: 0,
+                          y: 0,
+                          scale: 1,
+                          rotate: 0,
+                        }}
+                        animate={{
+                          x: 0,
+                          y: 0,
+                          scale: 1,
+                          rotate: 360,
+                        }}
+                        transition={{
+                          duration: 4, // Duration of one complete rotation (in seconds)
+                          loop: Infinity, // Infinite loop
+                          ease: "linear", // Linear easing for a smooth rotation
+                        }}
+                          src="experience.png"
+                          alt="Rotating Wheel"
+                        />
+                      </div>
                     </div>
                   </div>
-
-
-
                 </div>
-                </div>
-              <div class="">05</div>
-            
-            </div>
-                     
-            
-       
-
+                <div class="">05</div>
+              </div>
             </header>
 
             {/* ---------------2 brother profile photo board------------------ */}
 
-            <div className=" md:container md:mx-auto lg:container lg:mx-auto mb-32 pl-20">
-              <p className="text-6xl mt-20 text-slate-300 p-2 pt-20 font-bold	bg-clip-text bg-gradient-to-r from-purple-700 to-blue-600 text-transparent 	">
-                Who We Are ?
-              </p>
-              <p className=" text-3xl bg-clip-text bg-gradient-to-r from-purple-500 to-blue-600 text-transparent 	">
-                We are two brothers small team.
-              </p>
-
-              <p className="text-5xl mt-10 text-slate-300 p-2 pt-10 font-bold	bg-clip-text bg-gradient-to-r from-purple-700 to-blue-600 text-transparent 	">
-                One is Designer & Frontend developer,
-              </p>
-              <p className=" text-5xl font-bold bg-clip-text bg-gradient-to-r from-purple-500 to-blue-600 text-transparent 	">
-                <small>another </small>one is Full-stack developer.
-              </p>
+            <div className=" md:container md:mx-auto lg:container lg:mx-auto mb-32 pl-24">
+              <div className="text-6xl txt-gradnt-330 font-bold	">
+                <p>
+                  Meet the Dynamic Duo behind mind-blowing designs and
+                  cutting-edge animations. Elevate your web presence with our
+                  out-of-the-box brilliance for captivating landing pages, From
+                  captivating e-commerce platforms to seamless web applications,
+                  experience a revolution in digital excellence."
+                </p>
+              </div>
             </div>
 
             <div className=" md:container md:mx-auto lg:container lg:mx-auto pl-20">
@@ -155,8 +163,6 @@ export default function ScrollSection() {
                 <section class="text-gray-600 body-font">
                   <div class="container px-5 py-2 mx-auto">
                     <div class="flex flex-wrap -m-4">
-                      
-
                       <div class="p-4 lg:w-1/3 ">
                         <div className="card relative ">
                           <div className="bg-[url('/lord.jpg')] backgroundPosition min-h-[550px] rounded-[25px]">
@@ -226,22 +232,6 @@ export default function ScrollSection() {
               <p className=" text-3xl bg-clip-text bg-gradient-to-r from-purple-500 to-blue-600 text-transparent 	">
                 tools
               </p>
-
-             
-             
-
-
-
-
-
-
-
-
-
-
-
-
-             
             </div>
           </Scroll>
         </ScrollControls>

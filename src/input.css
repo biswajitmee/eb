@@ -109,6 +109,25 @@
 
   }
 
+
+
+  .txt-gradnt-330 span{
+    position: relative;
+    display: inline-block;
+    color: royalblue;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(225, 0, 255), rgb(58, 235, 4) 50%, rgb(0, 89, 255) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 1000ms ease;
+    text-decoration: none;
+  }
+   
+
+  
 }
 
  

@@ -7,10 +7,13 @@ export default function HeroText() {
      <TypeAnimation
      sequence={[
        'Unlocking Digital Potential', // Types 'One'
-       1000, // Waits 1s
+       3000, // Waits 1s
        'Empowering Your Digital Vision', // Deletes 'One' and types 'Two'
-       2000, // Waits 2s
-       'Empowering Businesses Digitally', // Types 'Three' without deleting 'Two'
+       3000, // Waits 2s
+       'Empowering Businesses Digitally',  
+       3000,
+       'New line for testing 4th animation',  
+       3000,
        () => {
          console.log('Sequence completed');
        },
@@ -20,6 +23,10 @@ export default function HeroText() {
      repeat={Infinity}
      style={{ fontSize: '2em', display: 'inline-block' }}
      omitDeletionAnimation={true}
+
+     speed={{ type: 'keyStrokeDelayInMs', value: 90 }} // Adjust the value (in milliseconds) for speed
+     deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 50 }} // Adjust the value (in milliseconds) for deletion speed
+ 
    />
   )
 }
