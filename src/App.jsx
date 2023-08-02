@@ -3,6 +3,7 @@ import ScrollSection from './ScrollSection'
   
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import MyAnimation from './MyAnimation';
 
 
  function App() {
@@ -10,7 +11,7 @@ import { motion } from "framer-motion";
 
   return (    
     <>
- 
+ {/* <MyAnimation /> */}
       <ScrollSection />
     </>
   )
